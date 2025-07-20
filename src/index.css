@@ -1,0 +1,38 @@
+@import "tailwindcss";
+@font-face {
+  font-family: "specimen";
+  src: url("./assets/fonts/PlaywriteVNGuides-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Outfit";
+  src: url("./assets/fonts/Outfit-VariableFont_wght.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Ovo";
+  src: url("./assets/fonts/Ovo-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  font-family: "Outfit";
+}
+.shadow-black-1 {
+  box-shadow: 4px 4px 0 #000;
+}
+
+.shadow-white {
+  box-shadow: 4px 4px 0 #fff;
+}
+
+.skill-card:hover {
+  box-shadow: 4px 4px 0 #000;
+}
+
+html {
+  scroll-behavior: auto !important;
+}
