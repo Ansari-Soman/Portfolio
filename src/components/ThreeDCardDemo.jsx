@@ -9,7 +9,11 @@ export function ThreeDCardDemo({ item }) {
     <CardContainer className="inter-var">
       <CardBody className="bg-white relative group/card  border-gray-300 w-auto sm:w-[500px] h-[580px] flex flex-col justify-between rounded-xl p-6 shadow-sm border-2">
         {/* Title */}
-        <CardItem translateZ="50" className="text-xl font-bold text-gray-800">
+        <CardItem
+          translateZ="50"
+          className="text-xl font-bold text-gray-800"
+          style={{ fontFamily: "Ovo" }}
+        >
           {item.title}
         </CardItem>
 
@@ -17,7 +21,8 @@ export function ThreeDCardDemo({ item }) {
         <CardItem
           as="p"
           translateZ="60"
-          className="text-gray-600 text-sm max-w-sm mt-2"
+          className="text-gray-700 text-sm  max-w-sm mt-2"
+          style={{ fontFamily: "Ovo" }}
         >
           {item.description}
         </CardItem>
