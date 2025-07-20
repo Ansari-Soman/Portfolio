@@ -61,7 +61,7 @@ const Header = () => {
         </a>
 
         <Link
-          to="/sample-resume.pdf"
+          to="/Soman-resume.pdf"
           target="_blank"
           download
           className="px-10 py-3 border
