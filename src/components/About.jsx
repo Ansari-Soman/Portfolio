@@ -3,7 +3,7 @@ import { infoList, toolsData } from "../../public/assets/assets";
 
 const About = () => {
   return (
-    <div id="about" className="w-full px-[12%] py-10 scroll-mt-20 ">
+    <div id="about" className="w-full px-[12%] py-10 scroll-mt-20 bg-red-700">
       <h4
         data-aos="fade-down"
         // data-aos-delay="200"
