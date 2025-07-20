@@ -1,19 +1,19 @@
 @import "tailwindcss";
 @font-face {
   font-family: "specimen";
-  src: url("./assets/fonts/PlaywriteVNGuides-Regular.ttf") format("truetype");
+  src: url("./fonts/PlaywriteVNGuides-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "Outfit";
-  src: url("./assets/fonts/Outfit-VariableFont_wght.ttf") format("truetype");
+  src: url("./fonts/Outfit-VariableFont_wght.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "Ovo";
-  src: url("./assets/fonts/Ovo-Regular.ttf") format("truetype");
+  src: url("./fonts/Ovo-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
