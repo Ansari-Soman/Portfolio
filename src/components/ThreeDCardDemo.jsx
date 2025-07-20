@@ -21,7 +21,7 @@ export function ThreeDCardDemo({ item }) {
         <CardItem
           as="p"
           translateZ="60"
-          className="text-gray-700 text-sm  max-w-sm mt-2"
+          className="text-gray-700 text-[15px] leading-6  max-w-sm mt-2"
           style={{ fontFamily: "Ovo" }}
         >
           {item.description}
