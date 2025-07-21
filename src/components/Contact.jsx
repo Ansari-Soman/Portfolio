@@ -21,7 +21,6 @@ const Contact = () => {
       setResult("Form Submitted Successfully");
       event.target.reset();
     } else {
-      console.log("Error", data);
       setResult(data.message);
     }
   };
@@ -29,7 +28,8 @@ const Contact = () => {
   return (
     <div
       id="contact"
-      className="w-full px-[12%] py-10 scroll-mt-20 bg-[url('/footer-bg-color.png')] bg-no-repeat bg-center bg-[length:90%_auto]"
+      className="overflow-x-hidden w-full px-4 lg:px-8 xl:px-[12%] max-w-[1600px] container
+      mx-auto py-10 scroll-mt-20 bg-[url('/footer-bg-color.png')] bg-no-repeat bg-center bg-[length:90%_auto] "
     >
       <h4
         data-aos="zoom"
@@ -54,7 +54,7 @@ const Contact = () => {
         feedback, please use the form below.
       </p>
 
-      <form className="max-w-2xl mx-auto" action="" onSubmit={onSubmit}>
+      <form className="w-full " action="" onSubmit={onSubmit}>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-10 mb-8">
           <input
             data-aos="fade-right"

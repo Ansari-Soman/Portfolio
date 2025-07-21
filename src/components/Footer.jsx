@@ -2,7 +2,10 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div data-aos="zoom" className="mt-20">
+    <div
+      data-aos="zoom"
+      className="mt-20 max-w-[1600px] mx-auto container   px-4 lg:px-8 xl:px-[12%] overflow-x-hidden"
+    >
       <div className="text-center">
         <img src="/assets/logo-1.png" className="w-36 mx-auto mb-2" alt="" />
 
@@ -12,7 +15,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="text-center sm:flex items-center justify-between border-t border-gray-400 mx-[10%] mt-12 py-6">
+      <div className="text-center sm:flex items-center justify-between border-t border-gray-400  mt-12 py-6">
         <p>© 2025 Ansari Soman. All rights reserved.</p>
         <ul className="flex items-center justify-center gap-10 mt-4 sm:mt-0">
           <li>

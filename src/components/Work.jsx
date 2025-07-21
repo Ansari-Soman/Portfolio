@@ -1,10 +1,13 @@
 import React from "react";
 import { projectData, workData } from "../../public/assets/assets";
-import { ThreeDCardDemo } from "./ThreeDCardDemo";
+import { ExpandableCardDemo } from "./ExpandableCardDemo";
 
 const Work = () => {
   return (
-    <div id="my" className="w-full px-[12%] py-10 scroll-mt-20">
+    <div
+      id="my"
+      className="w-full overflow-x-hidden  py-10 scroll-mt-20  max-w-[1600px] mx-auto  container  px-4 lg:px-8 xl:px-[12%]"
+    >
       <h4
         data-aos="zoom"
         className="text-center text-lg mb-2"
@@ -28,13 +31,8 @@ const Work = () => {
         projects showcasing my expertise in front-end development.
       </p>
 
-      <div
-        data-aos="fade-up"
-        className="grid  grid-cols-1 sm:grid-cols-2  place-content-between my-10 gap-5 "
-      >
-        {projectData.map((item, index) => {
-          return <ThreeDCardDemo key={index} item={item} />;
-        })}
+      <div className="  my-10 gap-5 ">
+        <ExpandableCardDemo />
       </div>
 
       <a

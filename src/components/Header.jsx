@@ -4,7 +4,8 @@ const Header = () => {
   return (
     <div
       id="home"
-      className=" w-11/12 max-w-3xl text-center mx-auto h-screen flex flex-col items-center justify-center gap-4 pt-16 "
+      className="container overflow-x-hidden
+        max-w-[1600px]  text-center mx-auto h-screen flex flex-col items-center justify-center gap-4 pt-16 bg-white px-4 -z-10"
     >
       {/* --------------PROFILE PIC ROUNDED------------- */}
       {/* <div data-aos="zoom-in" data-aos-anchor-placement="top-bottom">
@@ -30,7 +31,7 @@ const Header = () => {
         style={{ fontFamily: "Ovo" }}
         className="text-3xl sm:text-6xl lg:text-[66px]"
       >
-        fontend web developer
+        Frontend Web Developer
       </h1>
 
       <p

@@ -8,8 +8,7 @@ import Footer from "./components/Footer";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Lenis from "@studio-freight/lenis";
-import Testing from "./components/Testing";
-import { ThreeDCardDemo } from "./components/ThreeDCardDemo";
+
 const App = () => {
   useEffect(() => {
     AOS.init({
@@ -32,9 +31,7 @@ const App = () => {
   });
 
   // Optional: Listen to scroll events
-  lenis.on("scroll", ({ scroll, limit, velocity, direction, progress }) => {
-    console.log({ scroll, limit, velocity, direction, progress });
-  });
+  lenis.on("scroll", ({ scroll, limit, velocity, direction, progress }) => {});
 
   // Animation frame loop function
   function raf(time) {
@@ -45,8 +42,6 @@ const App = () => {
   // {------------------------++++++-----------------------}
   return (
     <>
-      {/* <Testing /> */}
-      {/* <ThreeDCardDemo /> */}
       <Navbar />
       <Header />
       <About />

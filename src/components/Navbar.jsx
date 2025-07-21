@@ -41,17 +41,15 @@ const Navbar = () => {
   const [isHover, setIsHover] = useState(false);
   return (
     <>
-      <div className="fixed top-0 right-0 w-11/12 -z-10 translate-y-[-80%] ">
+      {/* <div className="fixed top-0 right-0 w-11/12 -z-10 translate-y-[-80%] ">
         <img
           src="/assets/header-bg-color.png"
           alt=""
           className="w-full h-full object-cover"
         />
-      </div>
-
+      </div> */}
       <nav
-        data-aos="fade-down"
-        className={` w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex justify-between items-center z-50 transition duration-500 ${
+        className={` max-w-[1600px] mx-auto  container sticky px-4 lg:px-8 xl:px-[12%] py-4 flex justify-between inset-0 overflow-x-hidden items-center z-30 transition duration-500  ${
           isScroll ? " bg-white/50 backdrop-blur-lg shadow-sm" : ""
         }`}
       >
@@ -137,7 +135,7 @@ const Navbar = () => {
                 setIsHover(false);
               }}
               href="#contact"
-              className="relative hidden lg:flex items-center gap-3 px-10 py-2.5 border border-gray-500 rounded-full ml-4   overflow-hidden mix-blend-difference "
+              className="relative hidden md:flex items-center gap-3 px-10 py-2.5 border border-gray-500 rounded-full ml-4   overflow-hidden mix-blend-difference "
             >
               <motion.div
                 variants={{
@@ -152,7 +150,6 @@ const Navbar = () => {
                 className=" w-full h-full bg-black  absolute rounded-full -z-10 -translate-x-10 translate-y-[100%]"
               ></motion.div>
               Contact
-              {console.log(isHover)}
               <img
                 src={
                   isHover
@@ -171,7 +168,7 @@ const Navbar = () => {
         </div>
 
         {/* -- --------mobile menu -------- -- */}
-        <ul
+        {/* <ul
           ref={sideMenuRef}
           className="flex md:hidden flex-col py-20 px-10 fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen bg-rose-50 transition duration-1000 ease"
         >
@@ -214,13 +211,15 @@ const Navbar = () => {
               Contact me
             </a>
           </li>
-        </ul>
+        </ul> */}
       </nav>
+      {/* </div> */}
     </>
   );
 };
 
 export default Navbar;
+
 const Cursor = ({ position }) => {
   return (
     <motion.li
