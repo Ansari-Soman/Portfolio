@@ -53,7 +53,7 @@ const Navbar = () => {
         />
       </div> */}
       <nav
-        className={` max-w-[1600px] mx-auto  container fixed border-4 px-4 lg:px-8 xl:px-[12%] py-4 flex justify-between  overflow-x-hidden items-center z-50 transition duration-500   ${
+        className={` max-w-[1600px] mx-auto  container fixed px-4 lg:px-8 xl:px-[12%] py-4 flex justify-between  overflow-x-hidden items-center z-50 transition duration-500   ${
           isScroll ? " bg-white/50 shadow-sm" : ""
         }`}
       >
