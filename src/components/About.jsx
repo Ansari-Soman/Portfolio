@@ -68,6 +68,7 @@ const About = () => {
 
           <h4
             data-aos="fade-up"
+            data-aos-offset="-50"
             className="my-6 text-gray-700 lg:text-start text-center "
             style={{ fontFamily: "Ovo" }}
           >
