@@ -5,7 +5,7 @@ const Header = () => {
     <div
       id="home"
       className="container overflow-x-hidden
-        max-w-[1600px]  text-center mx-auto h-screen flex flex-col items-center justify-center gap-4 pt-16 bg-white px-4 -z-10"
+        max-w-[1600px]  text-center mx-auto h-[85vh]  flex flex-col items-center justify-center gap-4 pt-16 bg-white px-4 -z-10"
     >
       {/* --------------PROFILE PIC ROUNDED------------- */}
       {/* <div data-aos="zoom-in" data-aos-anchor-placement="top-bottom">
@@ -47,6 +47,7 @@ const Header = () => {
       <div
         data-aos="fade-up"
         data-aos-delay="200"
+        data-aos-offset="-200"
         className="flex flex-col sm:flex-row items-center gap-4 mt-4"
       >
         <a
