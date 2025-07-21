@@ -6,7 +6,7 @@ const TechStack = ({ stack }) => {
       <img src={`/assets/${stack}.png`} alt="" className="w-full" />
       <p
         className="mt-1 mix-blend-difference text-sm"
-        style={{ fontFamily: "Ovo" }}
+        style={{ fontFamily: "/Ovo" }}
       >
         {stack}
       </p>

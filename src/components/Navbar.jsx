@@ -5,16 +5,20 @@ import {
   MotionConfig,
   useAnimationControls,
 } from "motion/react";
+import HamburgerMenu from "./HamburgerMenu";
 
 const Navbar = () => {
   // ----------------HAMBURGER MENU---------------
   const sideMenuRef = useRef();
   const openMenu = () => {
-    sideMenuRef.current.style.transform = `translateX(-16rem)`;
+    sideMenuRef.current.style.transition = `all 1s ease`;
+    sideMenuRef.current.style.transform = `translateX(-100%)`;
   };
   const closeMenu = () => {
-    sideMenuRef.current.style.transform = `translateX(16rem)`;
+    sideMenuRef.current.style.transition = `all 1.5s ease`;
+    sideMenuRef.current.style.transform = `translateX(100%)`;
   };
+  const [handleOnHam, setHandleOnHam] = useState(false);
 
   // ----------------NAVBAR SCROLL---------------
   const [isScroll, setIsScroll] = useState(false);
@@ -49,8 +53,8 @@ const Navbar = () => {
         />
       </div> */}
       <nav
-        className={` max-w-[1600px] mx-auto  container sticky px-4 lg:px-8 xl:px-[12%] py-4 flex justify-between inset-0 overflow-x-hidden items-center z-30 transition duration-500  ${
-          isScroll ? " bg-white/50 backdrop-blur-lg shadow-sm" : ""
+        className={` max-w-[1600px] mx-auto  container fixed border-4 px-4 lg:px-8 xl:px-[12%] py-4 flex justify-between  overflow-x-hidden items-center z-50 transition duration-500   ${
+          isScroll ? " bg-white/50 shadow-sm" : ""
         }`}
       >
         <a href="#top">
@@ -63,37 +67,7 @@ const Navbar = () => {
           </div>
         </a>
         {/* ---------------------NAV MENU -------------------- */}
-        {/* <ul
-          className={`relative hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-8 py-1 transition duration-500 ${
-            isScroll ? "" : " shadow-sm bg-white/50"
-          }`}
-        >
-          <li
-            className={`${
-              isScroll ? "hover:bg-red-500" : "hover:bg-gray-200"
-            } rounded-full py-2 px-4`}
-          >
-            <a style={{ fontFamily: "Ovo" }} href="#top">
-              Home
-            </a>
-          </li>
-          <li>
-            <a style={{ fontFamily: "Ovo" }} href="#about">
-              About me{" "}
-            </a>
-          </li>
 
-          <li>
-            <a style={{ fontFamily: "Ovo" }} href="#work">
-              My Work
-            </a>
-          </li>
-          <li>
-            <a style={{ fontFamily: "Ovo" }} href="#contact">
-              Contact me
-            </a>
-          </li>
-        </ul> */}
         <ul
           onMouseLeave={() => {
             setPosition((pv) => ({
@@ -111,7 +85,7 @@ const Navbar = () => {
           <Cursor position={position} />
         </ul>
         {/* -------------CONTACT ME BUTTON-------------- */}
-        <div className="flex items-center gap-4 z-30">
+        <div className="flex items-center  gap-4 z-30">
           <MotionConfig transition={{ duration: 0.5 }}>
             <motion.a
               variants={{
@@ -162,56 +136,26 @@ const Navbar = () => {
             </motion.a>
           </MotionConfig>
 
-          <button className="block md:hidden ml-3d" onClick={openMenu}>
+          <button
+            className="block md:hidden ml-3 absolute right-5  cursor-pointer"
+            onClick={() => {
+              setHandleOnHam(true);
+              // setTimeout(() => openMenu(), 1000);
+              openMenu();
+            }}
+          >
             <img src="/assets/menu-black.png" alt="" className="w-6" />
           </button>
         </div>
 
         {/* -- --------mobile menu -------- -- */}
-        {/* <ul
-          ref={sideMenuRef}
-          className="flex md:hidden flex-col py-20 px-10 fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen bg-rose-50 transition duration-1000 ease"
-        >
-          <div
-            className="w-5 cursor-pointer absolute right-6 top-6"
-            onClick={closeMenu}
-          >
-            <img src="/assets/close-black.png" alt="" className="w-full" />
-          </div>
-          <li>
-            <a style={{ fontFamily: "Ovo" }} href="#top" onClick={closeMenu}>
-              Home
-            </a>
-          </li>
-          <li>
-            <a style={{ fontFamily: "Ovo" }} href="#about" onClick={closeMenu}>
-              About me
-            </a>
-          </li>
-          <li>
-            <a
-              style={{ fontFamily: "Ovo" }}
-              href="#services"
-              onClick={closeMenu}
-            >
-              Services
-            </a>
-          </li>
-          <li>
-            <a style={{ fontFamily: "Ovo" }} href="#work" onClick={closeMenu}>
-              My Work
-            </a>
-          </li>
-          <li>
-            <a
-              style={{ fontFamily: "Ovo" }}
-              href="#contact"
-              onClick={closeMenu}
-            >
-              Contact me
-            </a>
-          </li>
-        </ul> */}
+        {handleOnHam && (
+          <HamburgerMenu
+            sideMenuRef={sideMenuRef}
+            closeMenu={closeMenu}
+            setHandleOnHam={setHandleOnHam}
+          />
+        )}
       </nav>
       {/* </div> */}
     </>

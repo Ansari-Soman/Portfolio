@@ -84,7 +84,7 @@ const About = () => {
             {toolsData.map((tool, index) => (
               <li
                 key={index}
-                className="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:-translate-y-1 duration-500 skill-card flex-col"
+                className="flex items-center justify-center w-16 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:-translate-y-1 duration-500 skill-card flex-col px-4"
               >
                 <img
                   src={`/assets/${tool}.png`}

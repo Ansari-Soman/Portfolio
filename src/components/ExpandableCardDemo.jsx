@@ -85,12 +85,14 @@ export function ExpandableCardDemo() {
                 <div className="flex sm:justify-between sm:flex-row flex-col sm:pb-4 pb-0 items-start p-4 ">
                   <div className="">
                     <motion.h3
+                      style={{ fontFamily: "/Ovo" }}
                       layoutId={`title-${active.title}-${id}`}
                       className="font-bold text-neutral-200"
                     >
                       {active.title}
                     </motion.h3>
                     <motion.p
+                      style={{ fontFamily: "/Ovo" }}
                       layoutId={`description-${active.description}-${id}`}
                       className="text-neutral-400"
                     >
@@ -126,13 +128,13 @@ export function ExpandableCardDemo() {
         ) : null}
       </AnimatePresence>
 
-      <ul className=" space-y-4 ">
+      <ul className=" space-y-6 ">
         {cards.map((card, index) => (
           <motion.div
             layoutId={`card-${card.title}-${id}`}
             key={`card-${card.title}-${id}`}
             onClick={() => setActive(card)}
-            className="p-4 flex flex-col sm:flex-row sm:justify-between  sm:items-center hover:bg-neutral-800 rounded-xl cursor-pointer border bg-white   :"
+            className="p-4 flex flex-col sm:flex-row sm:justify-between  sm:items-center hover:bg-neutral-800 rounded-xl cursor-pointer border bg-white   hover:shadow-2xs hover:-translate-y-3 transition duration-500"
           >
             <div className="flex gap-4 flex-col sm:flex-row  ">
               <motion.div layoutId={`image-${card.title}-${id}`}>
@@ -146,6 +148,7 @@ export function ExpandableCardDemo() {
               </motion.div>
               <div className="sm:ml-10">
                 <motion.h3
+                  style={{ fontFamily: "/Ovo" }}
                   layoutId={`title-${card.title}-${id}`}
                   className="font-medium text-lg sm:text-xl mix-blend-difference text-neutral-200 text-center sm:text-left"
                 >
@@ -165,7 +168,7 @@ export function ExpandableCardDemo() {
               target="_blank"
               href={card.ctaLink}
               layoutId={`button-${card.title}-${id}`}
-              className="px-4 py-2 text-sm rounded-full font-bold bg-gray-100 hover:bg-gray-400 mix-blend-difference  hover:text-white text-black mt-4 md:mt-0"
+              className="px-4 sm:py-2 text-sm rounded-full font-bold text-center py-3 bg-gray-100 hover:bg-gray-400 mix-blend-difference  hover:text-white text-black mt-4 md:mt-0"
             >
               {card.ctaText}
             </motion.a>
