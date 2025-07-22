@@ -58,7 +58,7 @@ const Contact = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-10 mb-8">
           <input
             data-aos="fade-right"
-            className="flex-1 outline-none p-3 border-[0.5px] border-gray-400 rounded-md bg-white"
+            className="flex-1 outline-none p-3 border-[0.5px] border-gray-400 rounded-md bg-gray-200"
             type="text"
             placeholder="Enter your name"
             required
@@ -66,7 +66,7 @@ const Contact = () => {
           />
           <input
             data-aos="fade-left"
-            className="flex-1 outline-none p-3 border-[0.5px] border-gray-400 rounded-md bg-white"
+            className="flex-1 outline-none p-3 border-[0.5px] border-gray-400 rounded-md bg-gray-200"
             type="email"
             placeholder="Enter your email"
             required
@@ -76,7 +76,7 @@ const Contact = () => {
 
         <textarea
           data-aos="fade-up"
-          className="w-full outline-none p-4 border-[0.5px] border-gray-400 rounded-md bg-white mb-6 "
+          className="w-full outline-none p-4 border-[0.5px] border-gray-400 rounded-md bg-gray-200 mb-6 "
           name="message"
           rows="6"
           placeholder="Enter your message"
