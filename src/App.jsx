@@ -8,6 +8,7 @@ import Footer from "./components/Footer";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Lenis from "@studio-freight/lenis";
+import { WavyBackground } from "./components/WavyBackground";
 
 const App = () => {
   useEffect(() => {
@@ -43,7 +44,9 @@ const App = () => {
   return (
     <>
       <Navbar />
-      <Header />
+      <WavyBackground>
+        <Header />
+      </WavyBackground>
       <About />
       <Work />
       <Contact />
