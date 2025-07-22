@@ -128,7 +128,7 @@ export function ExpandableCardDemo() {
         ) : null}
       </AnimatePresence>
 
-      <ul className=" space-y-6 ">
+      <ul className=" space-y-6 " data-aos="fade-up">
         {cards.map((card, index) => (
           <motion.div
             layoutId={`card-${card.title}-${id}`}
