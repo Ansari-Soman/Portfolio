@@ -296,4 +296,25 @@ const cards = [
       );
     },
   },
+  {
+    title: "Organic Food UI",
+    description: "Responsive landing page for an organic food brand.",
+    src: "/assets/organic-food.png",
+    ctaText: "Live Demo",
+    ctaLink: "https://tailwind-responsive-food.vercel.app/",
+    stack: ["HTML", "Tailwind", "JS"],
+    content: () => {
+      return (
+        <p>
+          This is a responsive landing page built using HTML and Tailwind CSS
+          for an organic food brand. The template includes a modern hero
+          section, featured product cards, promotional banners, and a clean
+          layout optimized for all devices. It demonstrates strong understanding
+          of responsive design, utility-first CSS, and layout structuring using
+          Tailwind. It's a great example of clean, modern UI built without
+          JavaScript.
+        </p>
+      );
+    },
+  },
 ];
