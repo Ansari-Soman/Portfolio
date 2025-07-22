@@ -5,7 +5,7 @@ import {
   MotionConfig,
   useAnimationControls,
 } from "motion/react";
-import HamburgerMenu from "./HamburgerMenu";
+import { HamItem } from "./HamItem";
 
 const Navbar = () => {
   // ----------------HAMBURGER MENU---------------
@@ -54,7 +54,7 @@ const Navbar = () => {
       </div> */}
       <nav
         className={` max-w-[1600px] mx-auto  container fixed px-4 lg:px-8 xl:px-[12%] py-4 flex justify-between  overflow-x-hidden items-center z-50 transition duration-500   ${
-          isScroll ? " bg-white/50 shadow-sm" : ""
+          isScroll ? " bg-white shadow-sm" : ""
         }`}
       >
         <a href="#top">
@@ -149,15 +149,24 @@ const Navbar = () => {
         </div>
 
         {/* -- --------mobile menu -------- -- */}
-        {handleOnHam && (
-          <HamburgerMenu
-            sideMenuRef={sideMenuRef}
-            closeMenu={closeMenu}
-            setHandleOnHam={setHandleOnHam}
-          />
-        )}
+        <ul
+          ref={sideMenuRef}
+          className="flex md:hidden flex-col py-20 px-10 fixed translate-x-[100%] w-screen top-0 right-0 bottom-0 z-50 h-screen  bg-[#f0fdf4]  "
+        >
+          <div
+            className="w-5 cursor-pointer absolute right-6 top-6"
+            onClick={() => {
+              closeMenu(sideMenuRef);
+              setTimeout(() => setHandleOnHam(false), 1500);
+            }}
+          >
+            <img src="/assets/close-black.png" alt="" className="w-full" />
+          </div>
+          {hamBurger.map((item, index) => (
+            <HamItem item={item} key={index} closeMenu={closeMenu} />
+          ))}
+        </ul>
       </nav>
-      {/* </div> */}
     </>
   );
 };
@@ -196,3 +205,5 @@ const Tab = ({ children, setPosition }) => {
     </li>
   );
 };
+
+const hamBurger = ["Home", "About me", "My work", "Contact me"];
