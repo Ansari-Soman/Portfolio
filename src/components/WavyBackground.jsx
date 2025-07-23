@@ -51,12 +51,19 @@ export const WavyBackground = ({
 
   // White and grayish wave colors
   const waveColors = colors ?? [
-    "#F5F5F5",
-    "#D4D4D4",
-    "#A3A3A3",
-    "#737373",
-    "#525252",
-    "#3F3F3F",
+    // "#F5F5F5",
+    // "#D4D4D4",
+    // "#A3A3A3",
+    // "#737373",
+    // "#525252",
+    // "#3F3F3F",
+
+    "#A5F3FC",
+    "#06B6D4",
+    "#6EE7B7",
+    "#059669",
+    "#FCA5A5",
+    "#DC2626",
   ];
 
   const drawWave = (n) => {

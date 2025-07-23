@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import ClaudeButtons from "./ClaudeButtons";
 const Contact = () => {
   const [result, setResult] = useState("");
 
@@ -86,11 +86,15 @@ const Contact = () => {
 
         <button
           data-aos="fade-up"
-          className="py-3 px-8 w-max flex items-center justify-between gap-2 bg-black/80 text-white rounded-full mx-auto hover:bg-black duration-500"
+          className=" w-full flex justify-center "
           type="submit"
         >
-          Submit now{" "}
-          <img src="/assets/right-arrow-white.png" className="w-4" alt="" />
+          <ClaudeButtons
+            bgColor={"white"}
+            forColor={"black"}
+            buttonText={"Submit now"}
+          />
+          {/* <img src="/assets/right-arrow-white.png" className="w-4" alt="" /> */}
         </button>
 
         <p className="mt-4">{result}</p>

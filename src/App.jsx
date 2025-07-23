@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import About from "./components/About";
 import Work from "./components/Work";
 import Contact from "./components/Contact";
+import ClaudeButtons from "./components/ClaudeButtons";
 import Footer from "./components/Footer";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -43,6 +44,7 @@ const App = () => {
   // {------------------------++++++-----------------------}
   return (
     <>
+      {/* <ClaudeButtons></ClaudeButtons> */}
       <Navbar />
       <WavyBackground>
         <Header />

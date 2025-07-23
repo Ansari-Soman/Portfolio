@@ -1,7 +1,7 @@
 import React from "react";
 import { projectData, workData } from "../../public/assets/assets";
 import { ExpandableCardDemo } from "./ExpandableCardDemo";
-
+import ClaudeButtons from "./ClaudeButtons";
 const Work = () => {
   return (
     <div
@@ -36,13 +36,19 @@ const Work = () => {
       </div>
 
       <a
-        data-aos="zoom"
+        data-aos="fade-up"
         href=""
-        className="w-max flex items-center justify-center gap-2 text-gray-700 border-[0.5px] border-gray-700 rounded-full py-3 px-10 mx-auto my-20 hover:bg-[#fcf4ff] duration-500"
+        className="w-max flex  text-gray-700  mx-auto my-20 "
       >
-        Show more{" "}
-        <img src="/assets/right-arrow-bold.png" alt="" className="w-4" />
+        <ClaudeButtons
+          bgColor={"black"}
+          forColor={"white"}
+          buttonText={"Show more"}
+        ></ClaudeButtons>
+
+        {/* <img src="/assets/right-arrow-bold.png" alt="" className="w-4" /> */}
       </a>
+      {/* <a data-aos="zoom" href=""></a> */}
     </div>
   );
 };

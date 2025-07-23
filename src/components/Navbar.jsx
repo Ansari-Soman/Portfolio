@@ -6,6 +6,7 @@ import {
   useAnimationControls,
 } from "motion/react";
 import { HamItem } from "./HamItem";
+import ClaudeButtons from "./ClaudeButtons";
 
 const Navbar = () => {
   // ----------------HAMBURGER MENU---------------
@@ -87,61 +88,18 @@ const Navbar = () => {
           </ul>
           {/* -------------CONTACT ME BUTTON-------------- */}
           <div className="flex items-center  gap-4 z-30">
-            <MotionConfig transition={{ duration: 0.5 }}>
-              <motion.a
-                variants={{
-                  initial: {
-                    color: "#000",
-                  },
-                  col: {
-                    color: "#fff",
-                  },
-                }}
-                style={{ fontFamily: "Ovo" }}
-                whileHover={() => {
-                  control.start("trans");
-                  contCol.start("col");
-                  setIsHover(true);
-                }}
-                animate={contCol}
-                onMouseLeave={() => {
-                  control.start("initial");
-                  contCol.start("initial");
-                  setIsHover(false);
-                }}
-                href="#contact"
-                className="relative hidden md:flex items-center gap-3 px-10 py-2.5 border border-gray-500 rounded-full ml-4   overflow-hidden mix-blend-difference "
-              >
-                <motion.div
-                  variants={{
-                    initial: {
-                      y: 52,
-                    },
-                    trans: {
-                      y: -52,
-                    },
-                  }}
-                  animate={control}
-                  className=" w-full h-full bg-black  absolute rounded-full -z-10 -translate-x-10 translate-y-[100%]"
-                ></motion.div>
-                Contact
-                <img
-                  src={
-                    isHover
-                      ? "/assets/arrow-icon-dark.png"
-                      : "/assets/arrow-icon.png"
-                  }
-                  alt="arrow_icon"
-                  className="w-3"
-                />
-              </motion.a>
-            </MotionConfig>
+            <a href="#contact" className="hidden md:block">
+              <ClaudeButtons
+                bgColor={"black"}
+                forColor={"white"}
+                buttonText={"Contact me"}
+              />
+            </a>
 
             <button
               className="block md:hidden ml-3 absolute right-5  cursor-pointer"
               onClick={() => {
                 setHandleOnHam(true);
-                // setTimeout(() => openMenu(), 1000);
                 openMenu();
               }}
             >
