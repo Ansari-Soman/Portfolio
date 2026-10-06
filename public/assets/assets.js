@@ -46,8 +46,6 @@ export const toolsData = [
   "React",
   "Bootstrap",
   "Tailwind",
-  "Motion",
-  "Redux",
 ];
 
 export const projectData = [

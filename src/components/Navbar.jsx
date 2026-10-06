@@ -1,169 +1,22 @@
-import React, { useEffect, useRef, useState } from "react";
-import {
-  easeIn,
-  motion,
-  MotionConfig,
-  useAnimationControls,
-} from "motion/react";
-import { HamItem } from "./HamItem";
-import ClaudeButtons from "./ClaudeButtons";
+const links = [
+  ["Home", "#home"],
+  ["About", "#about"],
+  ["Projects", "#projects"],
+  ["Contact", "#contact"],
+];
 
-const Navbar = () => {
-  // ----------------HAMBURGER MENU---------------
-  const sideMenuRef = useRef();
-  const openMenu = () => {
-    sideMenuRef.current.style.transition = `all 1s ease`;
-    sideMenuRef.current.style.transform = `translateX(-100%)`;
-  };
-  const closeMenu = () => {
-    sideMenuRef.current.style.transition = `all 1.5s ease`;
-    sideMenuRef.current.style.transform = `translateX(100%)`;
-  };
-  const [handleOnHam, setHandleOnHam] = useState(false);
-
-  // ----------------NAVBAR SCROLL---------------
-  const [isScroll, setIsScroll] = useState(false);
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      if (scrollY > 50) {
-        setIsScroll(true);
-      } else {
-        setIsScroll(false);
-      }
-    });
-  }, []);
-
-  // ----------------NAVBAR ANIMATION---------------
-  const [position, setPosition] = useState({
-    left: 0,
-    width: 0,
-    opacity: 0,
-  });
-
-  // -----------------CONTACT ANIMATION-------------
-  const control = useAnimationControls();
-  const contCol = useAnimationControls();
-  const [isHover, setIsHover] = useState(false);
+export default function Navbar() {
   return (
-    <>
-      {/* <div className="fixed top-0 right-0 w-11/12 -z-10 translate-y-[-80%] ">
-        <img
-          src="/assets/header-bg-color.png"
-          alt=""
-          className="w-full h-full object-cover"
-        />
-      </div> */}
-      <div className="max-w-[1600px] mx-auto  flex justify-center">
-        <nav
-          className={` max-w-[1600px] mx-auto container fixed px-4 lg:px-8 xl:px-[12%] py-4 flex justify-between  overflow-x-hidden items-center z-50 transition duration-500     ${
-            isScroll ? " bg-white shadow-sm" : ""
-          }`}
-        >
-          <a href="#top">
-            <div className="w-16 cursor-pointer">
-              <img
-                src="/assets/logo-1.png"
-                alt=""
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </a>
-          {/* ---------------------NAV MENU -------------------- */}
-
-          <ul
-            onMouseLeave={() => {
-              setPosition((pv) => ({
-                ...pv,
-                opacity: 0,
-              }));
-            }}
-            className={`relative hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-2 py-1 transition duration-500 bg-white border-[0.5px]        }`}
-          >
-            <Tab setPosition={setPosition}>Home</Tab>
-            <Tab setPosition={setPosition}>About me</Tab>
-            <Tab setPosition={setPosition}>My work</Tab>
-            <Tab setPosition={setPosition}>Contact me</Tab>
-            {/* ---------------cutome----------- */}
-            <Cursor position={position} />
-          </ul>
-          {/* -------------CONTACT ME BUTTON-------------- */}
-          <div className="flex items-center  gap-4 z-30">
-            <a href="#contact" className="hidden md:block">
-              <ClaudeButtons
-                bgColor={"black"}
-                forColor={"white"}
-                buttonText={"Contact me"}
-              />
-            </a>
-
-            <button
-              className="block md:hidden ml-3 absolute right-5  cursor-pointer"
-              onClick={() => {
-                setHandleOnHam(true);
-                openMenu();
-              }}
-            >
-              <img src="/assets/menu-black.png" alt="" className="w-6" />
-            </button>
-          </div>
-
-          {/* -- --------mobile menu -------- -- */}
-          <ul
-            ref={sideMenuRef}
-            className="flex md:hidden flex-col py-20 px-10 fixed translate-x-[100%] w-screen top-0 right-0 bottom-0 z-50 h-screen  bg-[#f0fdf4]  "
-          >
-            <div
-              className="w-5 cursor-pointer absolute right-6 top-6"
-              onClick={() => {
-                closeMenu(sideMenuRef);
-                setTimeout(() => setHandleOnHam(false), 1500);
-              }}
-            >
-              <img src="/assets/close-black.png" alt="" className="w-full" />
-            </div>
-            {hamBurger.map((item, index) => (
-              <HamItem item={item} key={index} closeMenu={closeMenu} />
-            ))}
-          </ul>
-        </nav>
-      </div>
-    </>
+    <header className="site-header">
+      <nav className="nav-inner" aria-label="Main navigation">
+        <a className="wordmark" href="#home">AS<span>.</span></a>
+        <ul>
+          {links.map(([label, href]) => (
+            <li key={href}><a href={href}>{label}</a></li>
+          ))}
+        </ul>
+        <a className="nav-email" href="mailto:ansarisoman4077@gmail.com">Let’s talk</a>
+      </nav>
+    </header>
   );
-};
-
-export default Navbar;
-
-const Cursor = ({ position }) => {
-  return (
-    <motion.li
-      animate={position}
-      className="absolute z-0 rounded-full  bg-black h-10 "
-    />
-  );
-};
-
-const Tab = ({ children, setPosition }) => {
-  const res = "#" + children.split(" ")[0].toLocaleLowerCase();
-  const ref = useRef();
-  return (
-    <li
-      ref={ref}
-      onMouseEnter={() => {
-        if (!ref.current) return;
-        const { width } = ref.current.getBoundingClientRect();
-        setPosition({
-          width,
-          opacity: 1,
-          left: ref.current.offsetLeft,
-        });
-      }}
-      className="relative z-10 text-white mix-blend-difference px-3 py-2 "
-    >
-      <a href={`${res}`} style={{ fontFamily: "Ovo" }}>
-        {children}
-      </a>
-    </li>
-  );
-};
-
-const hamBurger = ["Home", "About me", "My work", "Contact me"];
+}
